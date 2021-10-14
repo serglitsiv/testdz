@@ -2,7 +2,6 @@
 @section('title' , 'List products')
 @section('content')
     <a class="btn btn-warning mt-3"  role="button" href="{{ route('products.create') }}">Create product</a>
-
     <div class="card mt-3" style="width: 18rem;">
         @foreach($products as $product)
         <div class="card-body">

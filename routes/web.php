@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,11 @@ use App\Http\Controllers\CardController;
 |
 */
 
-Route::get('/cards/id', [CardController::class, 'show']);
+
 Route::redirect('/', 'products');
 Route::resource('products' , ProductsController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
