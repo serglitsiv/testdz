@@ -9,7 +9,13 @@
             <p class="card-text">{{$product->price}} $</p>
             <a href="{{ route('products.show' , $product) }}" class="btn btn-primary">See more</a>
         </div>
-            <a class="btn btn-secondary" role="button" href="{{ route('products.edit' , $product ) }}">Edit product</a>
+
+            <form method="POST" action="{{route('products.destroy', $product)}}">
+                <a class="btn btn-secondary" role="button" href="{{ route('products.edit' , $product ) }}">Edit product</a>
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
         @endforeach
     </div>
     {{ $products->links() }}

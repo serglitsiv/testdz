@@ -16,33 +16,51 @@
         <div class="row">
             <div class="col">
                 <input name="name"
-                       value="{{ isset($product) ? $product->name : null  }}"
+                       value="{{ old('name' , isset($product) ? $product->name : null  ) }}"
                        type="text" class="form-control" placeholder="Name" aria-label="Name">
+                @error('name')
+                 <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col">
                 <input  name="code"
-                        value="{{ isset($product) ? $product->code : null  }}"
+                        value="{{ old('code' , isset($product) ? $product->code : null  ) }}"
                         type="text" class="form-control" placeholder="Code" aria-label="Code">
+                @error('code')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col">
                 <input  name="price"
-                        value="{{ isset($product) ? $product->price : null  }}"
+                        value="{{ old('price' , isset($product) ? $product->price : null  ) }}"
                         type="text" class="form-control" placeholder="Price" aria-label="Price">
+                @error('price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col">
                 <input  name="description"
-                        value="{{ isset($product) ? $product->description : null  }}"
+                        value="{{ old('description' , isset($product) ? $product->description : null  ) }}"
                         type="text" class="form-control" placeholder="Description" aria-label="Description">
+                @error('description')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col">
                 <input  name="height"
-                        value="{{ isset($product) ? $product->height : null  }}"
+                        value="{{ old('height' , isset($product) ? $product->height : null  ) }}"
                         type="text" class="form-control" placeholder="Height" aria-label="Height">
+                @error('height')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col">
                 <input  name="width"
-                        value="{{ isset($product) ? $product->width : null  }}"
+                        value="{{ old('width' , isset($product) ? $product->width : null  ) }}"
                         type="text" class="form-control" placeholder="Width" aria-label="Width">
+                @error('width')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
         </div>
         <div class="row mt-4">
